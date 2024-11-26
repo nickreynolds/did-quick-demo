@@ -8,6 +8,9 @@ dependencies:
   '@babel/plugin-syntax-import-assertions':
     specifier: ^7.26.0
     version: 7.26.0(@babel/core@7.26.0)
+  '@biomejs/biome':
+    specifier: ^1.9.4
+    version: 1.9.4
   '@craco/craco':
     specifier: ^7.1.0
     version: 7.1.0(@types/node@16.18.120)(postcss@8.4.49)(react-scripts@5.0.1)(typescript@4.9.5)
@@ -35,6 +38,9 @@ dependencies:
   '@testing-library/user-event':
     specifier: ^13.5.0
     version: 13.5.0(@testing-library/dom@10.4.0)
+  '@transmute/credentials-context':
+    specifier: ^0.7.0-unstable.82
+    version: 0.7.0-unstable.82
   '@types/jest':
     specifier: ^27.5.2
     version: 27.5.2
@@ -50,12 +56,78 @@ dependencies:
   '@veramo/core':
     specifier: ^6.0.0
     version: 6.0.0
+  '@veramo/core-types':
+    specifier: ^6.0.0
+    version: 6.0.0
+  '@veramo/credential-eip712':
+    specifier: ^6.0.0
+    version: 6.0.0
+  '@veramo/credential-ld':
+    specifier: ^6.0.0
+    version: 6.0.0(expo@52.0.11)(msrcrypto@1.5.8)(react-native@0.76.3)
+  '@veramo/credential-w3c':
+    specifier: ^6.0.0
+    version: 6.0.0(expo@52.0.11)(msrcrypto@1.5.8)(react-native@0.76.3)
+  '@veramo/data-store':
+    specifier: ^6.0.0
+    version: 6.0.0(pg@8.13.1)(sqlite3@5.1.7)(ts-node@10.9.2)
+  '@veramo/data-store-json':
+    specifier: ^6.0.0
+    version: 6.0.0
+  '@veramo/did-comm':
+    specifier: ^6.0.0
+    version: 6.0.0(expo@52.0.11)(pg@8.13.1)(react-native@0.76.3)(sqlite3@5.1.7)(ts-node@10.9.2)
+  '@veramo/did-discovery':
+    specifier: ^6.0.0
+    version: 6.0.0
+  '@veramo/did-jwt':
+    specifier: ^6.0.0
+    version: 6.0.0
+  '@veramo/did-manager':
+    specifier: ^6.0.0
+    version: 6.0.0
+  '@veramo/did-provider-ethr':
+    specifier: ^6.0.0
+    version: 6.0.0
+  '@veramo/did-provider-jwk':
+    specifier: ^6.0.0
+    version: 6.0.0
+  '@veramo/did-provider-key':
+    specifier: ^6.0.0
+    version: 6.0.0
+  '@veramo/did-provider-peer':
+    specifier: ^6.0.0
+    version: 6.0.0
+  '@veramo/did-provider-pkh':
+    specifier: ^6.0.0
+    version: 6.0.0
   '@veramo/did-resolver':
     specifier: ^6.0.0
     version: 6.0.0
+  '@veramo/key-manager':
+    specifier: ^6.0.0
+    version: 6.0.0
+  '@veramo/kms-local':
+    specifier: ^6.0.0
+    version: 6.0.0
+  '@veramo/kms-web3':
+    specifier: ^6.0.0
+    version: 6.0.0
+  '@veramo/message-handler':
+    specifier: ^6.0.0
+    version: 6.0.0
+  '@veramo/remote-client':
+    specifier: ^6.0.0
+    version: 6.0.0
+  '@veramo/selective-disclosure':
+    specifier: ^6.0.0
+    version: 6.0.0
+  '@veramo/utils':
+    specifier: ^6.0.0
+    version: 6.0.0
   did-provider-quick:
-    specifier: ^1.0.11
-    version: 1.0.11(@types/node@16.18.120)(expo@52.0.11)(express@4.21.1)(msrcrypto@1.5.8)(pg@8.13.1)(react-native@0.76.3)(react@18.3.1)(typescript@4.9.5)(viem@2.21.50)
+    specifier: ^1.0.15
+    version: 1.0.15(@types/node@16.18.120)(expo@52.0.11)(express@4.21.1)(msrcrypto@1.5.8)(pg@8.13.1)(react-native@0.76.3)(react@18.3.1)(typescript@4.9.5)(viem@2.21.50)
   ethr-did-resolver:
     specifier: ^11.0.2
     version: 11.0.2
@@ -1722,6 +1794,94 @@ packages:
   /@bcoe/v8-coverage@0.2.3:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
     dev: false
+
+  /@biomejs/biome@1.9.4:
+    resolution: {integrity: sha512-1rkd7G70+o9KkTn5KLmDYXihGoTaIGO9PIIN2ZB7UJxFrWw04CZHPYiMRjYsaDvVV7hP1dYNRLxSANLaBFGpog==}
+    engines: {node: '>=14.21.3'}
+    hasBin: true
+    requiresBuild: true
+    optionalDependencies:
+      '@biomejs/cli-darwin-arm64': 1.9.4
+      '@biomejs/cli-darwin-x64': 1.9.4
+      '@biomejs/cli-linux-arm64': 1.9.4
+      '@biomejs/cli-linux-arm64-musl': 1.9.4
+      '@biomejs/cli-linux-x64': 1.9.4
+      '@biomejs/cli-linux-x64-musl': 1.9.4
+      '@biomejs/cli-win32-arm64': 1.9.4
+      '@biomejs/cli-win32-x64': 1.9.4
+    dev: false
+
+  /@biomejs/cli-darwin-arm64@1.9.4:
+    resolution: {integrity: sha512-bFBsPWrNvkdKrNCYeAp+xo2HecOGPAy9WyNyB/jKnnedgzl4W4Hb9ZMzYNbf8dMCGmUdSavlYHiR01QaYR58cw==}
+    engines: {node: '>=14.21.3'}
+    cpu: [arm64]
+    os: [darwin]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@biomejs/cli-darwin-x64@1.9.4:
+    resolution: {integrity: sha512-ngYBh/+bEedqkSevPVhLP4QfVPCpb+4BBe2p7Xs32dBgs7rh9nY2AIYUL6BgLw1JVXV8GlpKmb/hNiuIxfPfZg==}
+    engines: {node: '>=14.21.3'}
+    cpu: [x64]
+    os: [darwin]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@biomejs/cli-linux-arm64-musl@1.9.4:
+    resolution: {integrity: sha512-v665Ct9WCRjGa8+kTr0CzApU0+XXtRgwmzIf1SeKSGAv+2scAlW6JR5PMFo6FzqqZ64Po79cKODKf3/AAmECqA==}
+    engines: {node: '>=14.21.3'}
+    cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@biomejs/cli-linux-arm64@1.9.4:
+    resolution: {integrity: sha512-fJIW0+LYujdjUgJJuwesP4EjIBl/N/TcOX3IvIHJQNsAqvV2CHIogsmA94BPG6jZATS4Hi+xv4SkBBQSt1N4/g==}
+    engines: {node: '>=14.21.3'}
+    cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@biomejs/cli-linux-x64-musl@1.9.4:
+    resolution: {integrity: sha512-gEhi/jSBhZ2m6wjV530Yy8+fNqG8PAinM3oV7CyO+6c3CEh16Eizm21uHVsyVBEB6RIM8JHIl6AGYCv6Q6Q9Tg==}
+    engines: {node: '>=14.21.3'}
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@biomejs/cli-linux-x64@1.9.4:
+    resolution: {integrity: sha512-lRCJv/Vi3Vlwmbd6K+oQ0KhLHMAysN8lXoCI7XeHlxaajk06u7G+UsFSO01NAs5iYuWKmVZjmiOzJ0OJmGsMwg==}
+    engines: {node: '>=14.21.3'}
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@biomejs/cli-win32-arm64@1.9.4:
+    resolution: {integrity: sha512-tlbhLk+WXZmgwoIKwHIHEBZUwxml7bRJgk0X2sPyNR3S93cdRq6XulAZRQJ17FYGGzWne0fgrXBKpl7l4M87Hg==}
+    engines: {node: '>=14.21.3'}
+    cpu: [arm64]
+    os: [win32]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@biomejs/cli-win32-x64@1.9.4:
+    resolution: {integrity: sha512-8Y5wMhVIPaWe6jw2H+KlEm4wP/f7EW3810ZLmDlrEEy5KvBsb9ECEfu/kMWD484ijfQ8+nIi0giMgu9g1UAuuA==}
+    engines: {node: '>=14.21.3'}
+    cpu: [x64]
+    os: [win32]
+    requiresBuild: true
+    dev: false
+    optional: true
 
   /@bitauth/libauth@1.19.1:
     resolution: {integrity: sha512-R524tD5VwOt3QRHr7N518nqTVR/HKgfWL4LypekcGuNQN8R4PWScvuRcRzrY39A28kLztMv+TJdiKuMNbkU1ug==}
@@ -5597,6 +5757,24 @@ packages:
       - web-streams-polyfill
     dev: false
 
+  /@veramo/data-store-json@6.0.0:
+    resolution: {integrity: sha512-EBVlIsDwWsBdHYI0HyJ5FndYkChBJrtRrSwPG4jic1ABKZqczLMEgfGmJrjQmDNJ4aviQm0JFeFFMAX3KN+dAQ==}
+    dependencies:
+      '@ungap/structured-clone': 1.2.0
+      '@veramo/core-types': 6.0.0
+      '@veramo/did-manager': 6.0.0
+      '@veramo/key-manager': 6.0.0
+      '@veramo/utils': 6.0.0
+      debug: 4.3.7
+      did-jwt-vc: 4.0.4
+      uuid: 9.0.1
+    transitivePeerDependencies:
+      - bufferutil
+      - encoding
+      - supports-color
+      - utf-8-validate
+    dev: false
+
   /@veramo/data-store@6.0.0(pg@8.13.1)(sqlite3@5.1.7)(ts-node@10.9.2):
     resolution: {integrity: sha512-lnvh4s/9zvv8/qCyqKzAwWhpr0NEN03sz7klvCuj+1fFcvrnN7ehKl9DONDPvpjDrQWjuMOgv1w3o+sUAV87Fw==}
     dependencies:
@@ -8583,8 +8761,8 @@ packages:
       uint8arrays: 3.1.1
     dev: false
 
-  /did-provider-quick@1.0.11(@types/node@16.18.120)(expo@52.0.11)(express@4.21.1)(msrcrypto@1.5.8)(pg@8.13.1)(react-native@0.76.3)(react@18.3.1)(typescript@4.9.5)(viem@2.21.50):
-    resolution: {integrity: sha512-1TS2GBqBUvGGRn5TaDyRWiAcXkekz7MQWLrZYmsMPCh80qDMHszq4bsCNQ9jEC5F47cdO1o5AmCrp6aw/4WNnA==}
+  /did-provider-quick@1.0.15(@types/node@16.18.120)(expo@52.0.11)(express@4.21.1)(msrcrypto@1.5.8)(pg@8.13.1)(react-native@0.76.3)(react@18.3.1)(typescript@4.9.5)(viem@2.21.50):
+    resolution: {integrity: sha512-uREhka/AgMcrPMPWwkfmAycSm6kX0vm6jtKy3Zxvr1o2KJMoZ/+DRF80ctA7ZTGipRc53ERkOfciD3Zcek1EQQ==}
     dependencies:
       '@jest/globals': 29.7.0
       '@transmute/credentials-context': 0.7.0-unstable.82
