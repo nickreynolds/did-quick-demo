@@ -7,6 +7,30 @@ import { agent } from './veramo/setup'
 import ResolveDID from './ResolveDID';
 import ManageDIDs from './ManageDIDs';
 
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { red } from '@mui/material/colors';
+import { CssBaseline } from '@mui/material';
+
+const theme = createTheme({
+  palette: {
+    background: {
+      default: "#d8f9f8"
+    },
+    primary: {
+      light: '#3de2e2',
+      main: '#e23d3d',
+      dark: '#3de28f',
+      contrastText: '#3d3de2',
+    },
+    secondary: {
+      light: '#3de2e2',
+      main: '#e23d3d',
+      dark: '#3de28f',
+      contrastText: '#3d8fe2',
+    },
+  }
+})
+
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
@@ -47,23 +71,25 @@ function App() {
 
 
   return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
     <div className="App">
       <header className="App-header">
-        {/* <pre id="result">{didDoc && JSON.stringify(didDoc, null, 2)}</pre> */}
         <Box>
-        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-          <Tab label="Item One" {...a11yProps(0)} />
-          <Tab label="Item Two" {...a11yProps(1)} />
-        </Tabs>
-        <CustomTabPanel value={value} index={0}>
-          <ResolveDID />
-        </CustomTabPanel>
-        <CustomTabPanel value={value} index={1}>
-          <ManageDIDs />
-        </CustomTabPanel>
+          <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+            <Tab label="Resolve DID" {...a11yProps(0)} />
+            <Tab label="Manage DIDs" {...a11yProps(1)} />
+          </Tabs>
+          <CustomTabPanel value={value} index={0}>
+            <ResolveDID />
+          </CustomTabPanel>
+          <CustomTabPanel value={value} index={1}>
+            <ManageDIDs />
+          </CustomTabPanel>
         </Box>
       </header>
     </div>
+    </ThemeProvider>
   )
 }
 

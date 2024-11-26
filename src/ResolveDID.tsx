@@ -3,34 +3,39 @@ import './App.css'
 
 
 import { agent } from './veramo/setup'
-import { Box } from '@mui/material'
+import { Box, Button, Grid2, TextField } from '@mui/material'
 
 function ResolveDID() {
   const [didDoc, setDidDoc] = useState<any>()
 
   const resolve = async () => {
     const doc = await agent.resolveDid({
-      didUrl: 'did:quick:did:key:z6MkndAHigYrXNpape7jgaC7jHiWwxzB3chuKUGXJg2b5RSj',
+      didUrl: didValue,
     })
 
     setDidDoc(doc)
   }
 
-  useEffect(() => {
-    console.log("do something.")
-    resolve()
-  }, [])
+  const [didValue, setDIDValue] = React.useState(
+    ""
+  );
 
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-    setValue(newValue);
+  const handleDIDChanged = (newValue: string) => {
+    setDIDValue(newValue);
   };
 
 
 
   return (
-    <Box>resolve</Box>
+    <Box component="form" sx={{ display: 'block'}}>
+      <Grid2 container={true} sx={{ width: 1, justifyContent: 'center' }}>
+        <TextField sx={{ width: 1/2 }} id="outlined-basic" label="DID" variant="outlined" onChange={(e) => handleDIDChanged(e.target.value)} />
+        <Button onClick={resolve}>Resolve</Button>
+      </Grid2>
+      <Box>
+        <pre id="result">{didDoc && JSON.stringify(didDoc, null, 2)}</pre>
+      </Box>
+    </Box>
   )
 }
 
