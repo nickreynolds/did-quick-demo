@@ -3,9 +3,10 @@ import "./App.css";
 
 import { agent } from "./veramo/setup";
 import { Box, Button, Grid2, TextField } from "@mui/material";
+import type { DIDResolutionResult } from "@veramo/core-types";
 
 function ResolveDID() {
-	const [didDoc, setDidDoc] = useState<any>();
+	const [didDoc, setDidDoc] = useState<DIDResolutionResult>();
 
 	const resolve = async () => {
 		const doc = await agent.resolveDid({

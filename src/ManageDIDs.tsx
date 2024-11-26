@@ -11,13 +11,14 @@ import {
 	Select,
 } from "@mui/material";
 import ManageSelectedDID from "./ManageSelectedDID";
+import type { IIdentifier } from "@veramo/core-types";
 
 function ManageDIDs() {
-	const [managedDIDs, setManagedDIDs] = useState<any>([]);
-	const [selectedDID, setSelectedDID] = useState<any>("");
+	const [managedDIDs, setManagedDIDs] = useState<string[]>([]);
+	const [selectedDID, setSelectedDID] = useState<string>("");
 
 	const generate = async () => {
-		const doc = await agent.didManagerCreate({ provider: "did:quick" });
+		await agent.didManagerCreate({ provider: "did:quick" });
 		getManagedDIDs();
 	};
 
@@ -25,9 +26,9 @@ function ManageDIDs() {
 		const managedDIDs = await agent.didManagerFind();
 
 		const quickDIDs = managedDIDs.filter(
-			(did: any) => did.provider === "did:quick",
+			(did: IIdentifier) => did.provider === "did:quick",
 		);
-		const quickDIDDids = quickDIDs.map((did: any) => did.did);
+		const quickDIDDids = quickDIDs.map((did: IIdentifier) => did.did);
 
 		setManagedDIDs(quickDIDDids);
 
@@ -37,6 +38,7 @@ function ManageDIDs() {
 		}
 	};
 
+	// biome-ignore lint: allow not specifying dependencies
 	useEffect(() => {
 		console.log("do something.");
 		getManagedDIDs();
@@ -48,7 +50,7 @@ function ManageDIDs() {
 	return (
 		<Box component="form" sx={{ display: "block" }}>
 			<Grid2 container={true} sx={{ width: 1, justifyContent: "center" }}>
-				<Box>
+				<Box sx={{ display: "flex", justifyContent: "center" }}>
 					<FormControl>
 						<Select
 							labelId="demo-select-did-label"
@@ -57,7 +59,7 @@ function ManageDIDs() {
 							value={selectedDID}
 							onChange={(e) => setSelectedDID(e.target.value)}
 						>
-							{managedDIDs.map((did: any) => (
+							{managedDIDs.map((did: string) => (
 								<MenuItem key={did} value={did}>
 									{did}
 								</MenuItem>

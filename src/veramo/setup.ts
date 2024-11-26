@@ -9,16 +9,19 @@ import { getResolver as keyDidResolver } from "key-did-resolver";
 import {
 	createAgent,
 	ICredentialPlugin,
-	IDIDManager,
-	IKeyManager,
-	IResolver,
+	type IDIDManager,
+	type IKeyManager,
+	type IResolver,
 } from "@veramo/core";
 import { CredentialPlugin, W3cMessageHandler } from "@veramo/credential-w3c";
 import {
 	CredentialIssuerEIP712,
 	ICredentialIssuerEIP712,
 } from "@veramo/credential-eip712";
-import { AbstractIdentifierProvider, DIDManager } from "@veramo/did-manager";
+import {
+	type AbstractIdentifierProvider,
+	DIDManager,
+} from "@veramo/did-manager";
 import { DIDResolverPlugin } from "@veramo/did-resolver";
 import { KeyManager } from "@veramo/key-manager";
 import { SdrMessageHandler } from "@veramo/selective-disclosure";

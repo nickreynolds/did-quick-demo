@@ -10,25 +10,21 @@ import ManageDIDs from "./ManageDIDs";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { red } from "@mui/material/colors";
 import { CssBaseline } from "@mui/material";
+import TechnicalDetails from "./TechnicalDetails";
 
 const theme = createTheme({
 	palette: {
 		background: {
-			default: "#d8f9f8",
+			default: "#89D2DC",
 		},
 		primary: {
-			light: "#3de2e2",
-			main: "#e23d3d",
-			dark: "#3de28f",
-			contrastText: "#3d3de2",
+			main: "#157A6E",
 		},
 		secondary: {
-			light: "#3de2e2",
-			main: "#e23d3d",
-			dark: "#3de28f",
-			contrastText: "#3d8fe2",
+			main: "#89D2DC",
 		},
 	},
+	typography: {},
 });
 
 interface TabPanelProps {
@@ -80,12 +76,16 @@ function App() {
 						>
 							<Tab label="Resolve DID" {...a11yProps(0)} />
 							<Tab label="Manage DIDs" {...a11yProps(1)} />
+							<Tab label="Technical Details" {...a11yProps(2)} />
 						</Tabs>
 						<CustomTabPanel value={value} index={0}>
 							<ResolveDID />
 						</CustomTabPanel>
 						<CustomTabPanel value={value} index={1}>
 							<ManageDIDs />
+						</CustomTabPanel>
+						<CustomTabPanel value={value} index={2}>
+							<TechnicalDetails />
 						</CustomTabPanel>
 					</Box>
 				</header>
