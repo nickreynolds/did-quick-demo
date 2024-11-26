@@ -1,3 +1,17 @@
+pre {
+  font-family: monospace;
+  white-space: pre;
+}
+
+#result {
+  text-align: left;
+  width: 900px;
+  background-color: #24232d;
+  color: #25c2a0;
+  padding: 15px;
+  overflow: scroll;
+}
+
 .App {
   text-align: center;
 }
@@ -32,6 +46,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
